@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/gaupoit/ivisualife/issues"
   },
-  "homepage": "https://github.com/gaupoit/ivisualife"
+  "homepage": "https://github.com/gaupoit/ivisualife",
+  "dependencies": {
+    "express": "^4.12.4"
+  }
 }
