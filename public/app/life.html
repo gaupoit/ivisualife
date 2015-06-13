@@ -1,0 +1,25 @@
+
+Hi, {{ user.name }}, using the best knowledge I have available, I'll try to put some perspective into your time on Earth.
+<br/>
+
+You were born on {{ user.bod_string }} amongst {{ worldPopulation }}
+other human beings on our planet.
+<br/>
+
+Day {{ user.livesDay }} of your life.
+<br/>
+
+Think for a moment… have you achieved everything you want to?
+<br/>
+You may of already lived {{ user.livesDayPercentage }}% of your lifetime.
+
+<!-- <canvas id="pie" class="chart chart-pie" data="data"
+  labels="labels" colours="colours"></canvas> -->
+<div>
+    <canvas id="life-pie" width="250" height="250"></canvas>
+</div>
+
+<div>
+    Time is ticking, here is how long you have until 100%:
+    <label data-ng-bind="deathCountDown"></label>
+</div>

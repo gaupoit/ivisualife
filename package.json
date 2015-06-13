@@ -21,7 +21,13 @@
   },
   "homepage": "https://github.com/gaupoit/ivisualife",
   "dependencies": {
-    "express": "^4.12.4"
+    "body-parser": "^1.12.4",
+    "bower": "^1.4.1",
+    "express": "^4.12.4",
+    "lodash": "^3.9.3",
+    "moment": "^2.10.3",
+    "mongoose": "^4.0.5",
+    "request": "^2.57.0"
   },
   "devDependencies": {
     "mocha": "^2.2.5",
