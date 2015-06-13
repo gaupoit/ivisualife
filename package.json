@@ -1,0 +1,23 @@
+{
+  "name": "ivisualife",
+  "version": "1.0.0",
+  "description": "Talk about your life",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaupoit/ivisualife.git"
+  },
+  "keywords": [
+    "nodejs",
+    "life"
+  ],
+  "author": "gaupoit and friends",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gaupoit/ivisualife/issues"
+  },
+  "homepage": "https://github.com/gaupoit/ivisualife"
+}
