@@ -1,0 +1,39 @@
+
+select,
+textarea,
+input {
+    padding: 0.4rem 0.7rem;
+    border: 1px solid $lightgrey;
+}
+
+.btn {
+    padding: 0.5rem 1.5rem;
+    background: $black;
+    color: $white;
+    display: inline-block;
+    // text-align:
+}
+
+
+.threed-btn {
+    border: 0;
+    display: inline-block;
+    padding: 10px 20px;
+    text-shadow: 0 -1px 1px rgba(19,65,88,.8);
+    color: $white;
+
+    background-color: #0c7dd3; // Old browsers
+    @include filter-gradient(#0c7dd3, #338cd6, vertical); // IE6-9
+    @include background-image(linear-gradient(top, #0c7dd3 0%,#2989d8 39%,#338cd6 100%));
+
+    @include border-radius(6px);
+    @include box-shadow(0 8px 0 #1a74a1, 0 15px 20px rgba(0,0,0,.35), inset 0 -1px 1px rgba(255,255,255,.15));
+    @include transition(0.2s ease-in-out);
+
+    &:focus,
+    &:active {
+        @include transform(translate(0, 4px));
+        @include box-shadow(0 4px 0 #1a74a1, 0 12px 10px rgba(0,0,0,.3), inset 0 -1px 1px rgba(255,255,255,.15));
+    }
+            
+}

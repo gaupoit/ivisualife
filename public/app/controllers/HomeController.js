@@ -1,7 +1,7 @@
 lifeApp.controller('HomeController', ['$scope', '$http', '$route', '$location',
     function($scope, $http, $route, $location) {
 
-        $scope.appName = 'Life App';
+        $scope.appName = 'Your Life in Stats';
 
         $scope.visualize = function(vm) {
 

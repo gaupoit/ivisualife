@@ -26,9 +26,6 @@ var app = express();
 
     });
 
-// app.configure('development', function(req, res, next) {
-//     app.use(express.errorHandler());
-// });
 
 // routes mapping ==============================================================
 require('./app/routes/routes')(app);

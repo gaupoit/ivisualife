@@ -1,0 +1,66 @@
+#intro {
+    // background-image: url("../img/background.jpg");
+    // background-repeat: no-repeat;
+    // background-size: 100% auto;
+    color: white;
+    // padding: 10% 0 15%;
+    text-align: center;
+    // background: url("../img/background.jpg") no-repeat scroll 50% 0 / cover rgba(0, 0, 0, 0);
+    background: $lightblack;
+}
+
+.result-page {
+    .site-title {
+    }
+    .section {
+        // padding: 10%;
+        color: $white;
+        background: $darkpurple;
+        &:nth-child(2n) {
+            background: $purple;
+        }
+    }
+    .centre {
+        padding: 10% 0;
+    }
+}
+    a.get-started {
+        margin: 4rem 0 0;
+        @extend .threed-btn;
+
+        background-color: #b32848; // Old browsers
+        @include filter-gradient(#b32848, #a3252b, vertical); // IE6-9
+        @include background-image(linear-gradient(top, #b32848 0%,#9b2325 93%,#a3252b 97%));
+
+        @include box-shadow(0 8px 0 #87122D, 0 15px 20px rgba(0,0,0,.35), inset 0 -1px 1px rgba(255,255,255,.15));
+
+        &:focus,
+        &:active {
+            @include box-shadow(0 4px 0 #8F1430, 0 12px 10px rgba(0,0,0,.3), inset 0 -1px 1px rgba(255,255,255,.15));
+        }
+    }
+
+#bd {
+    background-color: #9bafd8;
+}
+
+#colophon {
+    .group {
+        @extend %va-parent;
+    }
+
+}
+    .comp-intro {
+        padding: 0 0 0 3rem;
+        @extend %vertical-align;
+        position: absolute;;
+        left: 50%;
+        // border-left: 1px solid $white;
+    }
+
+.logo {
+    border-right: 1px solid $white;
+    padding: 4rem 4rem 4rem;
+    width: auto;
+}
+

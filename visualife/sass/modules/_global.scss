@@ -1,0 +1,71 @@
+html {
+    font-size: 100%;
+    // font-size: 20px;
+    // background: $bg-color;
+    //  min-width: 1024px;
+}
+/* IPHONE & IPAD SCROLLBAR *//*-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; - min width to fix ipad */
+
+html, button, input, select, textarea {
+    // font-family: arial, sans-serif;
+    // color: #222;
+}
+
+/*
+::-moz-selection {
+    background: #7AAD21;
+    color: #fff;
+    text-shadow: none;
+}
+::selection {
+    background: #7AAD21;
+    color: #fff;
+    text-shadow: none;
+}
+*/
+
+body {
+    // margin: 0;
+    // line-height: 1.4;
+    // font-family: $helvetica-stack;
+    @extend %lato-fontfamily;
+    font-size: 1.2rem;
+    background: $bg-color;
+    color: $text-color;
+    // border: 1px solid red;
+}
+
+/* Links */
+a, a:visited {
+    color: $link-color;
+    text-decoration: none;
+    // border-bottom: 1px dotted;
+    @include transition(0.3s ease);
+    &:hover {
+      color: $link-hover;
+      background: $rexy-red-color;
+    }
+}
+
+/** Lists **/
+dl, menu {
+    margin: 0.2rem 0;
+    padding: 0 0 0 10px;
+}
+
+dd {
+    margin: 0 0 0 40px;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+/** Classes **/
+.centre {
+    max-width: 1000px;
+    margin: 0 auto;
+    @include until($tablet) {
+        padding: 0 10%;
+    }
+}

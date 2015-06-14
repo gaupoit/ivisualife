@@ -1,0 +1,96 @@
+/*!
+    Theme Name:     Rexy
+    Theme URI:      http://rexy.me/theme/
+    Description:    A minimalist theme! 
+    Author:         Rex Hoang
+    Author URI:     http://rexy.me/
+    Version:        3.0.0
+
+    ================================================
+    ================================================
+
+*/
+
+@import "compass/css3/";
+//@import "animation";
+//@import "animation/animate";
+@import 'vendors/normalize';
+@import 'vendors/curtain';
+// @import 'vendors/jquery-ui';
+
+@import 'utils/variables';
+// @import 'utils/include-media';
+@import 'utils/mixins';
+// @import 'utils/functions';
+// @import 'utils/placeholders';
+
+// @import 'base/reset';
+@import 'base/base';
+@import 'base/typography';
+
+@import 'modules/global';
+@import 'modules/nav';
+@import 'modules/grid';
+// @import 'modules/header';
+// @import 'modules/footer';
+// @import 'modules/sidebar';
+@import 'modules/form';
+
+@import 'pages/home';
+@import 'pages/result';
+
+// @import 'themes/theme';
+// @import 'themes/admin';
+
+@import 'shame';
+
+/*
+
+sass/
+|
+|– vendors/
+|   |– _bootstrap.scss   # Bootstrap
+|   |– _jquery-ui.scss   # jQuery UI
+|   ...                  # Etc…
+|
+|– utils/
+|   |– _variables.scss   # Sass Variables
+|   |– _functions.scss   # Sass Functions
+|   |– _mixins.scss      # Sass Mixins
+|   |– _helpers.scss     # Class & placeholders helpers
+|
+|– base/
+|   |– _reset.scss       # Reset/normalize
+|   |– _typography.scss  # Typography rules
+|   ...                  # Etc…
+|
+|– layout/partials/
+|   |– _navigation.scss  # Navigation
+|   |– _grid.scss        # Grid system
+|   |– _header.scss      # Header
+|   |– _footer.scss      # Footer
+|   |– _sidebar.scss     # Sidebar
+|   |– _forms.scss       # Forms
+|   ...                  # Etc…
+|
+|– components/modules/
+|   |– _buttons.scss     # Buttons
+|   |– _carousel.scss    # Carousel
+|   |– _cover.scss       # Cover
+|   |– _dropdown.scss    # Dropdown
+|   ...                  # Etc…
+|
+|– pages/
+|   |– _home.scss        # Home specific styles
+|   |– _contact.scss     # Contact specific styles
+|   ...                  # Etc…
+|
+|– themes/
+|   |– _theme.scss       # Default theme
+|   |– _admin.scss       # Admin theme
+|   ...                  # Etc…
+|
+|
+`– main.scss             # Main Sass file
+
+*/

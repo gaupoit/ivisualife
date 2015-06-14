@@ -1,0 +1,41 @@
+
+
+.homepage {
+    select,
+    input {
+        display: block;
+        width: 100%;
+        margin: 0 0 0.5rem;
+        // &:not('.dob') {
+        // }
+        &.dob {
+            display: inline-block;
+            width: 30%;
+            &:not(.last) {
+                margin: 0 3.33333% 0 0;
+            }
+        }
+    }
+
+}
+
+.visualife-form {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin: 0% 0 0 -10%;
+    // must be same values as centre's breakpoint
+    @include at-least(980px) {
+        max-width: 20%;
+    }
+    .submit {
+        display: block;
+        text-align: center;
+        padding: 0.4rem 0;
+        background: $black;
+        color: $white;
+        // background: linear-gradient(center top , #53c4ff 0%, #4abaf4 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+

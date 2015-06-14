@@ -11,7 +11,7 @@ var lifeApp = angular.module('life_App', ['ngRoute', 'ngSanitize', 'chart.js'])
 		controller: 'HomeController'
 	});
 
-    $routeProvider.when('/life/:userId', {
+    $routeProvider.when('/life/:userId/:section?', {
 		templateUrl: './app/life.html',
 		controller: 'LifeController'
 	});

@@ -1,25 +1,57 @@
-
-Hi, {{ user.name }}, using the best knowledge I have available, I'll try to put some perspective into your time on Earth.
-<br/>
-
-You were born on {{ user.bod_string }} amongst {{ worldPopulation }}
-other human beings on our planet.
-<br/>
-
-Day {{ user.livesDay }} of your life.
-<br/>
-
-Think for a moment… have you achieved everything you want to?
-<br/>
-You may of already lived {{ user.livesDayPercentage }}% of your lifetime.
-
-<!-- <canvas id="pie" class="chart chart-pie" data="data"
-  labels="labels" colours="colours"></canvas> -->
-<div>
-    <canvas id="life-pie" width="250" height="250"></canvas>
-</div>
-
-<div>
-    Time is ticking, here is how long you have until 100%:
-    <label data-ng-bind="deathCountDown"></label>
-</div>
+<div class="result-page">
+    <!--[if lt IE 8]>
+                            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+   <!--  <nav class="menu primary">
+        <ul>
+            <li><a class="curtain-links ir" href="#intro">1</a></li>
+            <li><a class="curtain-links ir"href="#bd">2</a></li>
+            <li><a class="curtain-links ir" href="#section3">3</a></li>
+            <li><a class="curtain-links ir" href="#section4">4</a></li>
+            <li><a class="curtain-links ir" href="#colophon">5</a></li>
+        </ul>
+    </nav> -->
+    <div after-render="setupCurtains"></div>
+    <ol class="curtains">
+        <li id="intro" class="section cover">
+            <header class="band" data-fade="550" data-slow-scroll="3">
+                <div class="container centre">
+                    <div class="columns sixteen" data-0="opacity: 1" data-180="opacity: 0">
+                        <h1 class="site-title">Visualife</h1>
+                        <h2 class="tagline">Your Life that You May Not Notice</h2>
+                        <div class="intro">
+                            Hi <span class="fname">{{user.name}}</span>, using the best knowledge I have available, <br>I'll try to put some perspective into your time on Earth.
+                        </div>
+                        <a class="get-started btn curtain-links" href="#bd">Let's Get Started</a>
+                        </div><!--/ columns-->
+                        </div><!--/ container-->
+                    </header>
+                </li>
+                <li id="" class="section">
+                    <section class="born centre">
+                        <h2>You</h2>
+                        You were born on {{ user.bod_string }} amongst {{ worldPopulation }}
+                        <!-- <br> -->
+                        other human beings on our planet.
+                        <img src="img/globe.png" alt="">
+                    </section>
+                </li>
+                <li id="" class="section">
+                    <section class="born centre">
+                        <h3>
+                        Day {{ user.livesDay }} of your life
+                        </h3>
+                        Think for a moment… have you achieved everything you want to?
+                        You may of already lived {{ user.livesDayPercentage }}% of your lifetime.
+                        <div>
+                            <canvas id="life-pie" width="250" height="250"></canvas>
+                        </div>
+                        <div>
+                            Time is ticking, here is how long you have until 100%:
+                            <label data-ng-bind="deathCountDown"></label>
+                        </div>
+                    </section>
+                </li>
+            </ol>
+        </div>
+        
