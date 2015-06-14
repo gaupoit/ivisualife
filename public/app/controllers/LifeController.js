@@ -38,7 +38,7 @@
 
             function _setupCurtains() {
                 $('.curtains').curtain({
-                scrollSpeed: 200,
+                scrollSpeed: 400,
                 controls: '.menu',
                 curtainLinks: '.curtain-links',
                 nextSlide: function() {
@@ -97,8 +97,8 @@
                 context.arc(centerX, centerY, radius - 10, startingAngle, endingAngle, false);
                 context.closePath();
                 context.fill();
-                // text labels
                 context.save();
+                // text labels
                 var x = Math.floor(canvasWidth / 2);
                 var y = Math.floor(canvasHeight / 2);
                 if (percentageLived >= 100) {
