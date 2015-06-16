@@ -1,6 +1,6 @@
 #!/bin/sh
  
-ssh root@128.199.177.81 <<EOF
+ssh gaupoit@128.199.177.81 <<EOF
   cd /home/gaupoit/ivisualife
   git pull
   npm install --production
