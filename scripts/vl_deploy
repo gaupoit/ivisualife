@@ -1,0 +1,10 @@
+#!/bin/sh
+ 
+ssh root@128.199.177.81 <<EOF
+  cd /home/gaupoit
+  git pull
+  npm install --production
+  forever restartall
+  echo "Deployed successfully!!!"
+  exit
+EOF
