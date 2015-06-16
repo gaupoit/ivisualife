@@ -12,6 +12,7 @@
         createUser: _createUser,
     }
 
+
     function _getUsers(req, res) {
 
         User.find(function(err, users) {
