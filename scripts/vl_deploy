@@ -1,10 +1,10 @@
 #!/bin/sh
  
 ssh root@128.199.177.81 <<EOF
-  su gaupoit
   cd /home/gaupoit/ivisualife
   git pull
   npm install --production
+  su gaupoit
   forever restartall
   echo "Deployed successfully!!!"
   exit
