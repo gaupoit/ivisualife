@@ -18,6 +18,7 @@ installed() {
 installed vim
 installed git
 installed nodejs
+installed npm
 
 # install npm packages
 npm install -y bower -g
@@ -25,7 +26,8 @@ npm install -y pm2 -g
 
 # add official Nginx repo, install and start ngnix
 rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
-yum install -y nginx
+installed nginx
+
 # config nginx service
 NGINXSETUP=$(cat <<"EOF"
 server {
@@ -46,8 +48,8 @@ EOF
 )
 echo "${NGINXSETUP}" > /etc/nginx/conf.d/sfc.conf
 
-systemctl enable nginx.service
-systemctl start nginx.service
+sudo systemctl enable nginx.service
+sudo systemctl start nginx.service
 
 #Configure the package management system (YUM).
 sudo cat << EOF > /etc/yum.repos.d/mongodb.repo
@@ -81,4 +83,3 @@ echo -e $cs "Provisioning completed!" $ce
 echo -e $cs "Add this line in your /etc/hosts file:" $ce "\n"
 echo -e "\t192.168.18.11:1811 vl.dev.com\n"
 echo -e $cs "And visit http://vl.dev.com/ to see your dev page" $ce "\n"
-
