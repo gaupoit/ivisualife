@@ -77,6 +77,10 @@ service mongod start
 echo "mongodb started"
 export LC_ALL=C
 
+#install bower
+cd /var/www/ivisualife/public
+bower install --allow-root
+
 #Start ivisualife
 cd /var/www/ivisualife
 npm install
