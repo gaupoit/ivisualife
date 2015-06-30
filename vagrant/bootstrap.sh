@@ -24,6 +24,11 @@ installed npm
 npm install -y bower -g
 npm install -y pm2 -g
 
+#iptable
+systemctl stop firewalld
+systemctl mask firewalld
+installed iptables-services
+
 # add official Nginx repo, install and start ngnix
 rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
 installed nginx
@@ -36,7 +41,7 @@ server {
     server_name vl.dev.com www.vl.dev.com;
 
     location / {
-        proxy_pass http://localhost:1811;
+        proxy_pass http://localhost:8082;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -46,7 +51,7 @@ server {
 }
 EOF
 )
-echo "${NGINXSETUP}" > /etc/nginx/conf.d/sfc.conf
+echo "${NGINXSETUP}" > /etc/nginx/conf.d/ivl.conf
 
 sudo systemctl enable nginx.service
 sudo systemctl start nginx.service
@@ -81,5 +86,5 @@ cs="\033[33m"
 ce="\033[0m"
 echo -e $cs "Provisioning completed!" $ce
 echo -e $cs "Add this line in your /etc/hosts file:" $ce "\n"
-echo -e "\t192.168.18.11:1811 vl.dev.com\n"
+echo -e "\t192.168.33.11 vl.dev.com\n"
 echo -e $cs "And visit http://vl.dev.com/ to see your dev page" $ce "\n"

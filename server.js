@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 var app = express();
 
 // configuration ===============================================================
-    app.set('port', process.env.PORT || 1811);
+    app.set('port', process.env.PORT || 8082);
     app.use(express.static(__dirname  + '/public'));
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
