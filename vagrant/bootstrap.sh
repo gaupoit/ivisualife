@@ -80,7 +80,6 @@ export LC_ALL=C
 #Start ivisualife
 cd /var/www/ivisualife
 npm install
-pm2 start --watch server.js
 
 cs="\033[33m"
 ce="\033[0m"
