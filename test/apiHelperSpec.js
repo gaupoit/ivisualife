@@ -6,7 +6,7 @@ var
 describe("apiHelper", function() {
 	describe("#constructor", function() {
 		it('should have the world bank url which is http://api.worldbank.org/countries', function() {
-			apiHelper.worldbankUrl.should.be.equal('http://api.worldbank.org/countrssiesss');
+			apiHelper.worldbankUrl.should.be.equal('http://api.worldbank.org/countries');
 		});
 	});
 });
