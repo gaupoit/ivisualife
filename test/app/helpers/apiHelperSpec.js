@@ -1,7 +1,7 @@
 var 
 	assert = require("chai").assert,
 	should = require("chai").should(),
-	apiHelper = require("../app/helpers/apiHelper");
+	apiHelper = require("../../../app/helpers/apiHelper");
 
 describe("apiHelper", function() {
 	describe("#constructor", function() {
