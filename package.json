@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha --reporter spec test/**/*.js",
-    "ci-test": "istanbul cover _mocha -- -R spec 'test/**/*Spec.js' > test.mocha && istanbul report clover"
+    "ci-test": "istanbul cover _mocha -- -R spec 'test/**/*Spec.js' > test.tab && istanbul report clover"
   },
   "repository": {
     "type": "git",
