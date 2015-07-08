@@ -3,7 +3,7 @@
 var moment = require('moment'),
     util = require('util'),
     _ = require('lodash'),
-    request = require('request')
+    request = require('request'),
     apiHelper = require('../helpers/apiHelper');
 
 var populationController = {
