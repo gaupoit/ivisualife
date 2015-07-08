@@ -23,6 +23,7 @@ installed npm
 # install npm packages
 npm install -y bower -g
 npm install -y pm2 -g
+npm install -y forever -g
 
 #iptable
 systemctl stop firewalld
@@ -92,4 +93,4 @@ echo -e $cs "Add this line in your /etc/hosts file:" $ce "\n"
 echo -e "\t192.168.33.11 vl.dev.com\n"
 echo -e $cs "And visit http://vl.dev.com/ to see your dev page" $ce "\n"
 
-forever -w --watchDirectory server.js
+forever start -w --watchDirectory server.js

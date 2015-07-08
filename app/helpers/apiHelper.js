@@ -1,3 +1,5 @@
+'use strict';
+
 var apiHelper = {
 	worldbankUrl :  'http://api.worldbank.org/countries'
 }

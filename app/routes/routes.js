@@ -1,3 +1,5 @@
+'use strict';
+
 var user    = require('./user'),
     population = require('./population'),
     env           =  "",
@@ -53,22 +55,6 @@ module.exports = function(app) {
         }
 
     }
-
-
-
-  //=========== ERROR PART ===================
-  // catch 404 and forward to error handler
-  // catch 404 and forward to error handler
-  // app.use(function(req, res, next) {
-  //   var err = new Error('Resources Not Found');
-  //   err.status = 404;
-  //   next(err);
-  // });
-
-  // app.use(logErrors);
-  // console.log('app env: ' + app.get('env'));
-  // app.use(developmentHandleError);
-  // app.use(productionHandleError);
 }
 
 //=============== Handling error callback method
