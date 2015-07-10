@@ -4,7 +4,8 @@
   "description": "Talk about your life",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --reporter spec test/**/*.js",
+    "ci-test": "istanbul cover _mocha -- -R tap 'test/**/*Spec.js' > test.tap && istanbul report clover"
   },
   "repository": {
     "type": "git",
@@ -34,7 +35,9 @@
   },
   "devDependencies": {
     "chai-spies": "^0.6.0",
+    "istanbul": "^0.3.17",
     "mocha": "^2.2.5",
-    "supertest": "^1.0.1"
+    "supertest": "^1.0.1",
+    "tape": "^4.0.0"
   }
 }
