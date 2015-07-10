@@ -23,6 +23,7 @@ installed npm
 # install npm packages
 npm install -y bower -g
 npm install -y pm2 -g
+npm install -y forever -g
 
 #iptable
 systemctl stop firewalld

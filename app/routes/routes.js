@@ -1,5 +1,6 @@
 var user    = require('./user'),
     population = require('./population'),
+    horoscope = require('./horoscope'),
     env           =  "",
     express      = require('express'),
     path         = require('path');
@@ -39,6 +40,17 @@ module.exports = function(app) {
 
   });
 
+  app.get('/api/horoscope/:typex/:sign', function(req, res, next) {
+    var type = req.params.typex;
+    var sign = req.params.sign;
+    horoscope.getHoroScope(type, sign, function(error, data, statusCode) {
+      _returnJson(error, data, res, statusCode);      
+    });
+  });
+
+  app.get('/test', function(req, res, next) {
+    res.send('Hello222ssssaaa');
+  });
 
   function _returnJson(error, result, res, statusCode) {
 
