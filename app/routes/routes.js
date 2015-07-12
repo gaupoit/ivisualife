@@ -46,12 +46,12 @@ module.exports = function(app) {
     var type = req.params.typex;
     var sign = req.params.sign;
     horoscope.getHoroScope(type, sign, function(error, data, statusCode) {
-      _returnJson(error, data, res, statusCode);      
+      _returnJson(error, data, res, statusCode);
     });
   });
 
   app.get('/test', function(req, res, next) {
-    res.send('Hello222ssssaaa');
+    res.send(200, 'Hello222ssssaaaaaaxxxx');
   });
 
   function _returnJson(error, result, res, statusCode) {
