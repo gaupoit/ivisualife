@@ -1,7 +1,7 @@
 (function() {
     lifeApp.controller('LifeController', ['$scope', '$http', '$route', '$routeParams', '$interval',
         function($scope, $http, $route, $routeParams, $interval) {
-            
+
             $scope.$route = $route;
             $scope.setupCurtains = _setupCurtains;
             $scope.$routeParams = $routeParams;
@@ -10,10 +10,17 @@
                 $http.get('api/users/' + userId).success(function(data) {
                     $scope.user = data;
                     $scope.user.bod_string = moment($scope.user.bod).format("dddd, MMMM Do YYYY");
+                    var dobYYYYMMDD = moment($scope.user.bod).format('YYYY-MM-DD');
                     var year = moment($scope.user.bod).get('year');
-                    $http.get('/api/population/' + year).success(function(data) {
+
+                    var sex = 'unisex';
+                    var country = "World";
+
+                    var populationRankUrl = '/api/wp-rank/' + dobYYYYMMDD + '/' + sex + '/' + country + '/today';
+                    $http.get(populationRankUrl).success(function(data) {
                         $scope.worldPopulation = Number(data).toLocaleString();
                     });
+
                     $http.get('/api/life_expectancy/' + $scope.user.country + "/" + year + "/" + $scope.user.sex).success(function(data) {
                         var life_expectancy = math.round(data, 0);
                         var now = moment();
@@ -29,7 +36,7 @@
                         $scope.deathCountDown = calculatedTime(now, death);
                         $scope.user.livesDayPercentage = math.round(($scope.user.age * 100) / life_expectancy, 2);
                         // setupLivesDayChart($scope);
-                        
+
                     });
                 }).error(function(data) {
                     console.log(data);

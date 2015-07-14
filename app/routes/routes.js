@@ -28,6 +28,17 @@ module.exports = function(app) {
 
   });
 
+  app.get('/api/wp-rank/:dob/:sex/:country/today', function(req, res, next) {
+    var dob = req.params.dob;
+    var sex = req.params.sex;
+    var country = req.params.country;
+    
+    population.getPopulationRankToday(dob, sex, country, function(error, data, statusCode) {
+      _returnJson(error, Number(data.rank), res, statusCode);
+    });
+
+  });
+
   app.get('/api/life_expectancy/:country/:year/:gender', function(req, res, next) {
 
         var country = req.params.country;
