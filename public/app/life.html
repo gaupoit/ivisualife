@@ -30,10 +30,14 @@
                 <li id="" class="section">
                     <section class="born centre">
                         <h2>You</h2>
-                        You were born on {{ user.bod_string }} amongst {{ worldPopulation }}
+                        You were born on <i>{{ user.bod_string }}</i>  amongst <i>{{ worldRankingPopulation }}</i>
                         <!-- <br> -->
-                        other human beings on our planet.
+                         of <i>{{ worldTotalPopulation }}</i>  human beings on our planet.
                         <img src="img/globe.png" alt="">
+                        <canvas id="line" class="chart chart-line" data="data"
+                          labels="labels" legend="true" series="series"
+                          click="onClick">
+                        </canvas>
                     </section>
                 </li>
                 <li id="" class="section">
@@ -54,4 +58,3 @@
                 </li>
             </ol>
         </div>
-        
