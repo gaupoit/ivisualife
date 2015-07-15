@@ -1,0 +1,92 @@
+.homepage {
+    select,
+    input {
+        display: block;
+        width: 100%;
+        outline: 0;
+        background: transparent;
+        // &:not('.dob') {
+        // }
+        &:focus {
+            box-shadow: 0 0 4px $lightgrey;
+        }
+        &.error {
+            // box-shadow: 0 0 4px $rosered;
+        }
+        &.dob {
+            display: inline-block;
+            width: 30%;
+            &:not(.last) {
+                // margin: 0 3.33333% 0 0;
+                margin: 0 4% 0 0;
+            }
+        }
+    }
+    .input {
+        margin: 0 0 0.5rem;
+    }
+
+}
+
+
+.app-intro {
+    background: $black;
+    padding: 1.5rem 0;
+    color: $white;
+    font-size: 0.9rem;
+    // @extend .group;
+    // min-height: 150px;
+    display: none;
+    .centre {
+        // display: none;
+        @include column-count(2);
+        @include transition(0.2s ease-in);
+    }
+    .close-btn {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        color: $white;
+        font-size: 1.5rem;
+    }
+}
+    a.app-info {
+        float: right;
+        padding: 0.5rem 1rem;
+        background: $black;
+        margin: 0 2rem 0 0;
+        color: $white;
+        font-style: italic;
+    }
+
+.visualife-form {
+    // position: absolute;
+    // top: 10%;
+    // left: 50%;
+    // margin: 0% 0 0 -10%;
+    margin: 5rem auto 0;
+    // must be same values as centre's breakpoint
+    @include at-least(980px) {
+        // max-width: 20%;
+        max-width: 420px;
+    }
+    .submit {
+        margin: 1rem 0 0;
+        display: block;
+        text-align: center;
+        padding: 0.4rem 0;
+        background: $black;
+        color: $white;
+        // background: linear-gradient(center top , #53c4ff 0%, #4abaf4 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    }
+}
+    label.error {
+        font-size: 0.8rem;
+        color: $rosered;
+    }
+
+.sign-up-terms {
+    margin: 1.5rem 0 0;
+    font-size: 0.9rem;
+    text-align: center;
+}

@@ -4,7 +4,11 @@
 }
 
 /** Navigation **/
-
+.app-info-wrapper {
+    @extend .group;
+    height: 5px;
+    background: $black;
+}
 .primary {
     // margin: 0px auto;
     // text-align: center;
@@ -18,11 +22,11 @@
         display:block; 
         // opacity:0.6;
         position: fixed;  
-        left: 10%;  
+        left: 5%;  
         top: 150px;  
         z-index: 9999999;  
         border-top: 0;
-        overflow:visible;
+        // overflow:visible;
         a {
         }
     }  
@@ -39,11 +43,11 @@
     a {
         // color:#FFF; text-decoration:none; font-size:1.9em; padding:5px;
         background: none repeat scroll 0 0 transparent;
-        border: 2px solid #373a45;
+        border: 2px solid $white;
         border-radius: 6px;
         display: inline-block;
         height: 12px;
-        transition: all 0.15s ease 0s;
+        transition: all 0.3s ease 0s;
         width: 12px;
         // box-shadow: 0 0 2px 6px $lightgrey;
     }

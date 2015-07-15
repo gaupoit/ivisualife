@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Visualife - Result</title>
+        <title>iVisualife - Result</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width" />
         
@@ -22,15 +22,16 @@
         <![endif]-->
         <nav class="menu primary">
             <ul>
-              <li><a class="curtain-links ir" href="#intro">1</a></li>
-              <li><a class="curtain-links ir"href="#bd">2</a></li>
-              <li><a class="curtain-links ir" href="#section3">3</a></li>
-              <li><a class="curtain-links ir" href="#section4">4</a></li>
-              <li><a class="curtain-links ir" href="#colophon">5</a></li>
+              <li><a class="curtain-links ir" title="Intro" href="#intro">1</a></li>
+              <li><a class="curtain-links ir" title="Your Birthday" href="#bd">2</a></li>
+              <li><a class="curtain-links ir" title="Your Age" href="#section3">3</a></li>
+              <li><a class="curtain-links ir" title="" href="#section4">4</a></li>
+              <li><a class="curtain-links ir" title="" href="#colophon">5</a></li>
             </ul>
         </nav>
 
         <ol class="curtains">
+
             <li id="intro" class="section cover">
 
                 <!-- <header class="band" data&#45;fade="550" data&#45;slow&#45;scroll="3" data&#45;0="background&#45;position:0px 0px;" data&#45;500="background&#45;position:0px &#45;250px;"> -->
@@ -42,8 +43,8 @@
                 
                         <div class="columns sixteen" data-0="opacity: 1" data-180="opacity: 0">
 
-                            <h1 class="site-title">Visualife</h1>
-                            <h2 class="tagline">Your Life that You May Not Notice</h2>
+                            <h1 class="site-title">iVisualife</h1>
+                            <h2 class="tagline">Life that You May Not Notice</h2>
 
                             <div class="intro">
                                 Hi <span class="fname">Rex Hoang</span>, using the best knowledge I have available, <br>I'll try to put some perspective into your time on Earth.
@@ -58,33 +59,50 @@
                 </header><!--/ band-->
 
             </li>
+
             <li id="bd" class="section">
 
                 <section class="born centre">
 
                     <h2>You</h2>
-                    You were born on Saturday, 21 April 2009 amongst 6,817,737,000
-                    <!-- <br> -->
-                    other human beings on our planet.
 
-                    <img src="img/globe.png" alt="">
+                    <article class="dob">
+                        - You were born on Saturday, 21 April 2009
+                        <div class="bd-calendar">
+                            <div class="day-of-birth">Saturday</div>
+                            <div class="bd-info">
+                                <span class="date-of-birth">21</span>
+                                <div class="month-of-birth">September, 1991</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="population-rank">
+                        You're the 4,400,400nth Citizen of Mother Earth <sup>[1]</sup>
+                        <img src="img/world-bd-rank.png" alt="">
+                        <img src="img/globe.png" alt="">
+                    </article>
+
 
                 </section>
 
             </li>
+
             <li id="section3" class="section">
 
                 <section class="born centre">
 
                     <h3>
-                        Day 2182 of your life
+                        You're 24 years old
                     </h3>
 
+                        Today's the 2182 Day of your life <sup>[2]</sup>
+<sup>[]</sup>
 
                     Think for a moment… have you achieved everything you want to?
                     You may of already lived 7.75% of your lifetime.
 
-                    graph
+                    <div id="life-pie-chart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
                     countdown here
                 </section>
 
@@ -94,11 +112,6 @@
 
                     <h2>Mek 's a Brew Lad</h2>
 
-                    <br>
-
-                    <br>
-                    <br>
-                    <br>
                     <br>
                     <p><strong>A pint 'o mild. Tell thi summat for nowt th'art nesh thee chuffin' nora eeh appens as maybe. Ey up is that thine god's own county. Be reet be reet nah then michael palin bloomin' 'eck gerritetten.</strong> Ah'll learn thi soft southern pansy. Any rooad soft southern pansy nobbut a lad mardy bum shu' thi gob face like a slapped arse. Ee by gum mardy bum michael palin. God's own county. Th'art nesh thee. Appens as maybe god's own county where's tha bin.</p>
 
@@ -146,6 +159,8 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script src="http://code.highcharts.com/modules/exporting.js"></script>
         <script src="js/plugins/curtain.js"></script>
         <!-- <script type="text/javascript" src="js/plugins/skrollr&#45;ck.js"></script> -->
         <script src="js/main.js"></script>

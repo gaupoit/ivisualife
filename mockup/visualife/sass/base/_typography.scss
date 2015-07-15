@@ -8,6 +8,7 @@
 // @import url(http://fonts.googleapis.com/css?family=Bowlby+One+SC);
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,900);
 @import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 
 /**
  * Address font sizes and margins set differently in IE 6/7.
@@ -25,10 +26,16 @@ h1, h2, h3, h4, h5, h6 {
         margin: 0;
         font-size: 3rem;
         line-height: 3rem;
+        &:first-letter {
+            text-transform: none;
+        }
         @include at-least($tablet) {
             font-size: 5rem;
             line-height: 5rem;
         }
+    }
+    .tagline {
+        font-weight: normal;
     }
 
 h1 {

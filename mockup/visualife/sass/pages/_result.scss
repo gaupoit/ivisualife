@@ -9,15 +9,19 @@
     background: $lightblack;
 }
 
+$darkblue: #11191E;
+$aegeanblue: #1A252D;
+
+
 .result-page {
     .site-title {
     }
     .section {
         // padding: 10%;
         color: $white;
-        background: $darkpurple;
+        background: $darkblue;
         &:nth-child(2n) {
-            background: $purple;
+            background: $aegeanblue;
         }
     }
     .centre {
@@ -40,8 +44,11 @@
         }
     }
 
+
+
 #bd {
-    background-color: #9bafd8;
+    // background-color: #9bafd8;
+    background-color: #1A252D;
 }
 
 #colophon {
@@ -63,4 +70,51 @@
     padding: 4rem 4rem 4rem;
     width: auto;
 }
+
+$bd-calendar-radius: 10px;
+
+.bd-calendar {
+    max-width: 200px;
+    width: 20%;
+    min-height: 190px;
+    margin: 2rem auto;
+    @include border-radius($bd-calendar-radius);
+    background: $white;
+    text-align: center;
+    color: $lightblack;
+    position: relative;
+    box-shadow: 0 0 10px $lightblack;
+    &:after,
+    &:before {
+        content: '';
+        width: 14px;
+        height: 14px;
+        display: block;
+        border-radius: 100%;
+        background: $aegeanblue;
+        // background: $white;
+        position: absolute; 
+        top: 15px;
+        left: 1rem;
+    }
+    &:after {
+        left: auto;
+        right: 1rem;
+    }
+}
+    .day-of-birth {
+        background: $rosered;
+        color: $white;
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        border-radius: $bd-calendar-radius $bd-calendar-radius 0 0;
+    }
+    .date-of-birth {
+        font-size: 4.5rem;
+        font-weight: bold;
+        font-weight: 500;
+    }
+    .month-of-birth {
+        color: $rosered;
+    }
 

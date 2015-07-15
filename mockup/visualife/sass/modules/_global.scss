@@ -43,7 +43,7 @@ a, a:visited {
     @include transition(0.3s ease);
     &:hover {
       color: $link-hover;
-      background: $rexy-red-color;
+      // background: $rexy-red-color;
     }
 }
 
