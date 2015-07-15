@@ -8,9 +8,22 @@ var moment = require('moment'),
 
 var populationController = {
     getPopulation: _getPopulation,
+    getPopulationRankToday: _getPopulationRankToday,
     getLifeExpectancy: _getLifeExpectancy,
     requestApi: _requestApi,
-    baseUrl: apiHelper.worldbankUrl
+    baseUrl: apiHelper.worldbankUrl,
+    populationRankUrl: apiHelper.populationRankUrl
+}
+
+function _getPopulationRankToday(dob, sex, country, cb) {
+  if (!sex) {
+    sex = 'unisex';
+  } else {
+    sex = sex.toLowerCase();
+  }
+
+  var url = util.format('%s/%s/%s/%s/today/', populationController.populationRankUrl, dob, sex, country);
+  populationController.requestApi(url, '', cb);
 }
 
 function _getPopulation(year, cb) {
