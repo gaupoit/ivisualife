@@ -17,9 +17,6 @@ lifeApp.controller('HomeController', ['$scope', '$http', '$route', '$location',
                     console.log("Errors", data);
                 });
 
-
-
         };
-
 
 }]);
