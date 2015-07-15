@@ -93,4 +93,4 @@ echo -e $cs "Add this line in your /etc/hosts file:" $ce "\n"
 echo -e "\t192.168.33.11 vl.dev.com\n"
 echo -e $cs "And visit http://vl.dev.com/ to see your dev page" $ce "\n"
 
-forever -w --watchDirectory server.js
+forever start -w server.js
