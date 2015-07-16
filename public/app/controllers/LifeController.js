@@ -8,6 +8,9 @@
             if ($scope.$routeParams.userId) {
                 var userId = $scope.$routeParams.userId;
                 $http.get('api/users/' + userId).success(function(data) {
+                    $scope.worldRankingPopulation = "...";
+                    $scope.worldTotalPopulation = "...";
+
                     $scope.user = data;
                     $scope.user.bod_string = moment($scope.user.bod).format("dddd, MMMM Do YYYY");
                     var dobYYYYMMDD = moment($scope.user.bod).format('YYYY-MM-DD');
@@ -18,7 +21,14 @@
 
                     var populationRankUrl = '/api/wp-rank/' + dobYYYYMMDD + '/' + sex + '/' + country + '/today';
                     $http.get(populationRankUrl).success(function(data) {
-                        $scope.worldPopulation = Number(data).toLocaleString();
+                        var rankPopulation = Number(data);
+
+                        var totalPopulationUrl = '/api/wp-rank/1920-01-01/unisex/World/today';
+                        $http.get(totalPopulationUrl).success(function(totalPopulation) {
+                          var ranking = Number(totalPopulation) - rankPopulation;
+                          $scope.worldRankingPopulation = Number(ranking).toLocaleString();
+                          $scope.worldTotalPopulation = Number(totalPopulation).toLocaleString();
+                        });
                     });
 
                     $http.get('/api/life_expectancy/' + $scope.user.country + "/" + year + "/" + $scope.user.sex).success(function(data) {
@@ -32,7 +42,7 @@
                             var now = moment();
                             var death = moment($scope.user.bod).add(life_expectancy, 'y');
                             $scope.deathCountDown = calculatedTime(now, death);
-                        }, 1000)
+                        }, 1000);
                         $scope.deathCountDown = calculatedTime(now, death);
                         $scope.user.livesDayPercentage = math.round(($scope.user.age * 100) / life_expectancy, 2);
                         // setupLivesDayChart($scope);
@@ -41,6 +51,23 @@
                 }).error(function(data) {
                     console.log(data);
                 });
+
+                _initPopulationChart();
+            }
+
+            function _initPopulationChart() {
+              var yearLabels = [];
+              for (var i = 1950; i <= 2015; i += 5) {
+                yearLabels.push(String(i));
+              }
+              $scope.labels = yearLabels;
+              $scope.series = ['Population by each 5 years (million)'];
+              $scope.data = [
+                [2556, 2780, 3039, 3345, 3707, 4086, 4454, 4850, 5278, 5687, 6081, 6462, 6840, 7215]
+              ];
+              $scope.onClick = function (points, evt) {
+                console.log(points, evt);
+              };
             }
 
             function _setupCurtains() {
