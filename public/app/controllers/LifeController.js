@@ -1,10 +1,30 @@
 (function() {
-    lifeApp.controller('LifeController', ['$scope', '$http', '$route', '$routeParams', '$interval',
-        function($scope, $http, $route, $routeParams, $interval) {
+    lifeApp.controller('LifeController', ['$scope', '$http', '$route', '$routeParams', '$interval', 'limitToFilter',
+        function($scope, $http, $route, $routeParams, $interval, limitToFilter) {
 
             $scope.$route = $route;
             $scope.setupCurtains = _setupCurtains;
             $scope.$routeParams = $routeParams;
+
+            $scope.populationSummary = [
+                [Date.UTC(1950,1,1),2556],
+                [Date.UTC(1955,1,1),2780],
+                [Date.UTC(1960,1,1),3039],
+                [Date.UTC(1965,1,1),3345],
+                [Date.UTC(1970,1,1),3707],
+                [Date.UTC(1975,1,1),4086],
+                [Date.UTC(1980,1,1),4454],
+                [Date.UTC(1985,1,1),4850],
+                [Date.UTC(1990,1,1),5278],
+                [Date.UTC(1995,1,1),5687],
+                [Date.UTC(2000,1,1),6081],
+                [Date.UTC(2005,1,1),6462],
+                [Date.UTC(2010,1,1),6840],
+                [Date.UTC(2015,1,1),7215]
+            ];
+
+            $scope.dob = "";
+
             if ($scope.$routeParams.userId) {
                 var userId = $scope.$routeParams.userId;
                 $http.get('api/users/' + userId).success(function(data) {
@@ -12,6 +32,7 @@
                     $scope.worldTotalPopulation = "...";
 
                     $scope.user = data;
+                    $scope.dob = data.bod;
                     $scope.user.bod_string = moment($scope.user.bod).format("dddd, MMMM Do YYYY");
                     var dobYYYYMMDD = moment($scope.user.bod).format('YYYY-MM-DD');
                     var year = moment($scope.user.bod).get('year');
@@ -101,4 +122,100 @@
             }
         }
     ]);
+
+    lifeApp.directive('hcPopulationRankingChart', function () {
+      return {
+        restrict: 'C',
+        replace: true,
+        scope: {
+          items: '=',
+          user  : '='
+        },
+        controller: function ($scope, $element, $attrs) {
+          console.log(2);
+
+        },
+        template: '<div id="hcPopulationRankingChart" style="margin: 0 auto">Chart not working</div>',
+        link: function (scope, element, attrs) {
+          var chart = new Highcharts.Chart({
+            chart: {
+              renderTo: 'hcPopulationRankingChart'
+            },
+
+            rangeSelector: {
+                selected: 1
+            },
+
+            title: {
+                text: 'Population chart'
+            },
+
+            xAxis: {
+                type: 'datetime',
+                dateTimeLabelFormats: {
+                    day: '%e of %b '
+                }
+            },
+
+            yAxis: {
+                title: {
+                    text: 'Population (million)'
+                }
+            },
+
+            series: [{
+                type: "area",
+                name: 'Population growth',
+                data: scope.items,
+                id: 'dataseries',
+                tooltip: {
+                    valueDecimals: 4
+                }
+              },
+              {
+                id: "flagSeries",
+                type: "flags",
+                name: "Where you were",
+                data: [],
+                onSeries: 'dataseries',
+                shape: 'squarepin',
+                color: '#000000', //Highcharts.getOptions().colors[0], // same as onSeries
+                fillColor: '#000000', //Highcharts.getOptions().colors[0],
+                // onSeries: 'dataseries',
+                // width: 16,
+                style: { // text style
+                    color: 'white'
+                },
+                states: {
+                    hover: {
+                        fillColor: '#0000ff' // darker
+                    }
+                }
+              }
+
+            ]
+          });
+          scope.$watch("items", function (newValue) {
+            chart.series[0].setData(newValue, true);
+          }, true);
+
+          scope.$watch("user", function (user) {
+            if (!user) {
+              return;
+            }
+            var flagSeries = chart.get("flagSeries");
+            if (flagSeries.points.length == 1) { // already add Birthday flags
+              return;
+            }
+            var bod = user.bod;
+            flagSeries.addPoint({
+                title: "Birthday",
+                x: Date.UTC(moment(bod).get('year'), moment(bod).get('month'), moment(bod).get('date')),
+                text: 'Happy birtday to u ^_^'
+            }, true, false);
+          }, true);
+        }
+      }
+    });
+
 })();
