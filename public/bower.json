@@ -33,6 +33,7 @@
     "ng-curtain": "~0.1.1",
     "lodash": "~3.9.3",
     "highcharts-ng": "~0.0.8",
-    "highcharts-release": "~4.1.7"
+    "highcharts-release": "~4.1.7",
+    "async": "~1.4.0"
   }
 }

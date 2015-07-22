@@ -6,22 +6,24 @@
             $scope.setupCurtains = _setupCurtains;
             $scope.$routeParams = $routeParams;
 
-            $scope.populationSummary = [
-                [Date.UTC(1950,1,1),2556],
-                [Date.UTC(1955,1,1),2780],
-                [Date.UTC(1960,1,1),3039],
-                [Date.UTC(1965,1,1),3345],
-                [Date.UTC(1970,1,1),3707],
-                [Date.UTC(1975,1,1),4086],
-                [Date.UTC(1980,1,1),4454],
-                [Date.UTC(1985,1,1),4850],
-                [Date.UTC(1990,1,1),5278],
-                [Date.UTC(1995,1,1),5687],
-                [Date.UTC(2000,1,1),6081],
-                [Date.UTC(2005,1,1),6462],
-                [Date.UTC(2010,1,1),6840],
-                [Date.UTC(2015,1,1),7215]
-            ];
+            // $scope.populationSummary = [
+            //     [Date.UTC(1950,1,1),2556],
+            //     [Date.UTC(1955,1,1),2780],
+            //     [Date.UTC(1960,1,1),3039],
+            //     [Date.UTC(1965,1,1),3345],
+            //     [Date.UTC(1970,1,1),3707],
+            //     [Date.UTC(1975,1,1),4086],
+            //     [Date.UTC(1980,1,1),4454],
+            //     [Date.UTC(1985,1,1),4850],
+            //     [Date.UTC(1990,1,1),5278],
+            //     [Date.UTC(1995,1,1),5687],
+            //     [Date.UTC(2000,1,1),6081],
+            //     [Date.UTC(2005,1,1),6462],
+            //     [Date.UTC(2010,1,1),6840],
+            //     [Date.UTC(2015,1,1),7215]
+            // ];
+
+            $scope.populationSummary = [];
 
             $scope.dob = "";
 
@@ -40,15 +42,184 @@
                     var sex = 'unisex';
                     var country = "World";
 
+                    var tasks = [
+                        function(callback) {
+                            $http.get('/api/wp-rank/1920-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1925-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1930-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1935-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1940-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1945-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1950-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1955-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1960-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1965-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1970-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1975-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1980-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1985-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1990-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/1995-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/2000-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/2005-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/2010-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        },
+                        function(callback) {
+                            $http.get('/api/wp-rank/2015-01-01/' + sex + '/' + country + '/today').success(function(data) {
+                                var rankPopulation = Number(data.rank);
+                                var date = moment(data.dob);
+                                $scope.populationSummary.push([Date.UTC(date.get('year'),1,1),Number(data.rank)]);
+                                callback();
+                            });
+                        }
+                    ];
+
+
+
+                    async.series(tasks, function(err) { //This function gets called after the two tasks have called their "task callbacks"
+                        console.log('errrr0r', err);
+                    });
+
                     var populationRankUrl = '/api/wp-rank/' + dobYYYYMMDD + '/' + sex + '/' + country + '/today';
                     $http.get(populationRankUrl).success(function(data) {
-                        var rankPopulation = Number(data);
+                        var rankPopulation = Number(data.rank);
 
                         var totalPopulationUrl = '/api/wp-rank/1920-01-01/unisex/World/today';
-                        $http.get(totalPopulationUrl).success(function(totalPopulation) {
-                          var ranking = Number(totalPopulation) - rankPopulation;
-                          $scope.worldRankingPopulation = Number(ranking).toLocaleString();
-                          $scope.worldTotalPopulation = Number(totalPopulation).toLocaleString();
+                        $http.get(totalPopulationUrl).success(function(data2) {
+                          var ranking = Number(data2.rank) - rankPopulation;
+                          $scope.worldRankingPopulation = Number(rankPopulation).toLocaleString();
+                          $scope.worldTotalPopulation = Number(data2.rank).toLocaleString();
                         });
                     });
 

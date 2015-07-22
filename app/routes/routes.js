@@ -34,7 +34,8 @@ module.exports = function(app) {
     var country = req.params.country;
 
     population.getPopulationRankToday(dob, sex, country, function(error, data, statusCode) {
-      _returnJson(error, Number(data.rank), res, statusCode);
+      // _returnJson(error, Number(data.rank), res, statusCode);
+      _returnJson(error, data, res, statusCode);
     });
 
   });
