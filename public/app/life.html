@@ -1,6 +1,6 @@
 <div class="result-page">
     <!--[if lt IE 8]>
-                            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+                                        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div after-render="setupCurtains"></div>
     <nav class="menu primary">
@@ -20,7 +20,7 @@
                         <h1 class="site-title">Visualife</h1>
                         <h2 class="tagline">Your Life that You May Not Notice</h2>
                         <div class="intro">
-                            Hi <span class="fname">{{user.name}}</span>, using the best knowledge I have available, <br>I'll try to put some perspective into your time on Earth.
+                            Hi <span class="fname" data-ng-bind="user.name"></span>, using the best knowledge I have available, <br>I'll try to put some perspective into your time on Earth.
                         </div>
                         <a class="get-started btn curtain-links" href="#bd">Let's Get Started</a>
                         </div><!--/ columns-->
@@ -30,23 +30,30 @@
                 <li id="" class="section">
                     <section class="born centre">
                         <h2>You</h2>
-                        You were born on <i>{{ user.bod_string }}</i>  amongst <i>{{ worldRankingPopulation }}</i>
-                        <!-- <br> -->
-                         of <i>{{ worldTotalPopulation }}</i>  human beings on our planet.
-                        <img src="img/globe.png" alt="">
-                        <!-- <canvas id="line" class="chart chart-line" data="data"
-                          labels="labels" legend="true" series="series"
-                          click="onClick">
-                        </canvas> -->
-
-                        <div class="hc-PopulationRankingChart" items="populationSummary" user="user"></div>
+                        <article class="dob">
+                            You were born on {{ user.bod_string }}
+                            <div class="bd-calendar">
+                                <div class="day-of-birth" data-ng-bind="user.bod_dateOfWeek"></div>
+                                <div class="bd-info">
+                                    <span class="date-of-birth" data-ng-bind="user.calendar.date"></span>
+                                    <div class="month-of-birth" data-ng-bind="user.calendar.monthYear"></div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="population-rank">
+                            You're the .... Citizen of Mother Earth <sup>[1]</sup>
+                            <div class="hc-PopulationRankingChart" items="populationSummary" user="user"></div>
+                            <img src="img/globe.png" alt="">
+                        </article>
                     </section>
                 </li>
                 <li id="" class="section">
                     <section class="born centre">
                         <h3>
-                        Day {{ user.livesDay }} of your life
+                        You're 24 years old
                         </h3>
+                        Today's the {{ user.livesDay }} Day of your life <sup>[2]</sup>
+                        <sup>[]</sup>
                         Think for a moment… have you achieved everything you want to?
                         You may of already lived {{ user.livesDayPercentage }}% of your lifetime.
                         <div>

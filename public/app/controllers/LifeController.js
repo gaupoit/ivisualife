@@ -36,6 +36,7 @@
                     $scope.user = data;
                     $scope.dob = data.bod;
                     $scope.user.bod_string = moment($scope.user.bod).format("dddd, MMMM Do YYYY");
+                    $scope.user.calendar = massageDataForCalendar($scope.dob);
                     var dobYYYYMMDD = moment($scope.user.bod).format('YYYY-MM-DD');
                     var year = moment($scope.user.bod).get('year');
 
@@ -271,6 +272,15 @@
                     console.log("ok");
                 }
                 });
+            }
+
+            function massageDataForCalendar(userBod) {
+                var calendar = {
+                    dayOfWeek : moment(userBod).format("dddd"),
+                    date : moment(userBod).get('date'),
+                    monthYear : moment(userBod).format("MMMM, YYYY") 
+                }
+                return calendar;
             }
 
             function calculatedTime(date1, date2) {
