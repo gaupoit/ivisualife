@@ -5,7 +5,7 @@ ssh root@128.199.177.81 <<EOF
   git pull
   npm install --production
   cd public/
-  bower update --production
+  bower install --production
   cd ../
   su gaupoit
   forever restartall
