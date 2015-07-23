@@ -4,8 +4,8 @@ ssh root@128.199.177.81 <<EOF
   cd /home/gaupoit/ivisualife
   git pull
   npm install --production
-  cd public/
-  bower install --production
+  cd public
+  ../node_modules/.bin/bower install --production
   cd ../
   su gaupoit
   forever restartall
