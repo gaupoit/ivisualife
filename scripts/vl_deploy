@@ -1,9 +1,12 @@
 #!/bin/sh
- 
+
 ssh root@128.199.177.81 <<EOF
   cd /home/gaupoit/ivisualife
   git pull
   npm install --production
+  cd public/
+  bower update --production
+  cd ../
   su gaupoit
   forever restartall
   echo "Deployed successfully!!!"
